@@ -116,18 +116,17 @@ let readmeContent = (readmeData) => {
   //destructure projects and about data from templateData based on their property key names
       const {projectName, description, tableOfContents, installation, usage, screenshot, tests, license, questions} = readmeData;
       return `
-      #${projectName}
-      ##Description
-      ${description}
-      ##Installation
-      ${installation}
-      ##Usage
-      ${usage}
-      [![license](https://img.shields.io/badge/license-${license}-brightgreen.svg)](https://en.wikipedia.org/wiki/${license}_License)
-      ##Contact Me For Questions
-      ${questions}
-  
-      `;
+# ${projectName}
+## Description
+${description}
+## Installation
+${installation}
+## Usage
+${usage}
+[![license](https://img.shields.io/badge/license-${license}-brightgreen.svg)](https://en.wikipedia.org/wiki/${license}_License)
+## Contact Me For Questions
+${questions}
+`;
   };
 
 // function to write README file
