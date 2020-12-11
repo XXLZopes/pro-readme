@@ -162,8 +162,8 @@ const readmeContent = readmeData => {
     ${tests}`
   };
   return `
-# ${projectName} ${licenseRM}
-## Description
+# ${projectName}
+## Description ${licenseRM}
 ${description}
 ${tableOfContentsRM}
 ## Installation
