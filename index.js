@@ -131,9 +131,8 @@ const readmeContent = readmeData => {
     tableOfContentsRM = ''
   } else{
     tableOfContentsRM = `### Table of Contents:
-* [Installation](#install) 
+* [Installation](#Installation) 
 * [Usage](#usage) 
-* [License](#license) 
 * [Contact](#contact)
     `
   };
@@ -164,6 +163,7 @@ const readmeContent = readmeData => {
   };
   return `
 # ${projectName}
+${licenseRM}
 ## Description
 ${description}
 ${tableOfContentsRM}
@@ -171,10 +171,9 @@ ${tableOfContentsRM}
 ${installation}
 ## Usage
 ${usage}
-${licenseRM}
 ${testsRM}
 ${screenshotRM}
-## Contact Me For Questions
+## Contact
 ${questions}
 `;
 };
