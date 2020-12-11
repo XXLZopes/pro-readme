@@ -1,6 +1,7 @@
 const fs = require('fs')
 const inquirer = require('inquirer');
-const Choices = require('inquirer/lib/objects/choices');
+const { stringify } = require('querystring');
+
 // array of questions for user
 const questions = () => {
   return inquirer.prompt([
@@ -13,7 +14,7 @@ const questions = () => {
     //description
     {
       type: 'input',
-      name: 'Description',
+      name: 'description',
       message: 'Describe the project'
     },
     //table of contents y or n
@@ -110,22 +111,51 @@ const questions = () => {
   ]);
 };
 
-// function to write README file
-// function writeToFile(fileName, data) {
-// }
-const writeFile = (fileContent) => {
+//README.md content
+let readmeContent = (readmeData) => {
+  //destructure projects and about data from templateData based on their property key names
+      const {projectName, description, tableOfContents, installation, usage, screenshot, tests, license, questions} = readmeData;
+      return `
+      #${projectName}
+      ##Description
+      ${description}
+      ##Installation
+      ${installation}
+      ##Usage
+      ${usage}
+      [![license](https://img.shields.io/badge/license-${license}-brightgreen.svg)](https://en.wikipedia.org/wiki/${license}_License)
+      ##Contact Me For Questions
+      ${questions}
   
-}
+      `;
+  };
 
-// function to initialize program
-function init() {
+// function to write README file
 
-}
+const writeFile = (fileContent) => {
+  return new Promise((resolve, reject) => {
+    fs.writeFile("./README.md", fileContent, (err) => {
+      // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
+      if (err) {
+        reject(err);
+        // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
+        return;
+      }
+      // if everything went well, resolve the Promise and send the successful data to the `.then()` method
+      resolve({
+        ok: true,
+        message: "README.md file created!",
+      });
+    });
+  });
+};
 
 // function call to initialize program
-init();
 
 questions()
-.then(testConsoleLog => {
-  console.log(testConsoleLog.projectName)
+.then(questionAnswers => {
+  return readmeContent(questionAnswers);
+})
+.then(writeTheFile => {
+  return writeFile(writeTheFile)
 });
