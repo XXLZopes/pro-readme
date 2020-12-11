@@ -5,6 +5,12 @@ const { stringify } = require("querystring");
 // array of questions for user
 const questions = () => {
   return inquirer.prompt([
+    //github username
+    {
+      type: "input",
+      name: "github",
+      message: "What is your github username?",
+    },
     //title
     {
       type: "input",
@@ -48,7 +54,7 @@ const questions = () => {
     {
       type: "input",
       name: "screenshot",
-      message: "Enter the screenshot pathway from the root directory",
+      message: "Enter the screenshot pathway from the root directory (Example: ./image.png)",
       when: ({ confirmScreenshot }) => {
         if (confirmScreenshot) {
           return true;
@@ -113,6 +119,7 @@ const questions = () => {
 const readmeContent = readmeData => {
   //destructure projects and about data from templateData based on their property key names
   const {
+    github,
     projectName,
     description,
     tableOfContents,
@@ -171,12 +178,12 @@ ${usage}
 ${testsRM}
 ${screenshotRM}
 ## Contact
+[Github](https://github.com/${github})
 ${questions}
 `;
 };
 
 // function to write README file
-
 const writeFile = (fileContent) => {
   return new Promise((resolve, reject) => {
     fs.writeFile("./README.md", fileContent, (err) => {
