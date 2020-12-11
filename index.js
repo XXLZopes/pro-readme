@@ -1,7 +1,5 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const { stringify } = require("querystring");
-
 // array of questions for user
 const questions = () => {
   return inquirer.prompt([
@@ -199,7 +197,6 @@ if(!linkToApp){
   return `
 # ${projectName}
 ## Description ${licenseRM}
-[Deployed Application](${linkToAppRM})
 ${description}
 ${tableOfContentsRM}
 ## Installation
@@ -209,6 +206,7 @@ ${usage}
 ${testsRM}
 ${screenshotRM}
 ## Contact
+[Deployed Application](${linkToAppRM})
 [Github](https://github.com/${github})
 
 ${questions}
