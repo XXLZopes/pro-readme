@@ -162,8 +162,7 @@ const readmeContent = readmeData => {
     ${tests}`
   };
   return `
-# ${projectName}
-${licenseRM}
+# ${projectName} ${licenseRM}
 ## Description
 ${description}
 ${tableOfContentsRM}
