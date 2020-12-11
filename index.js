@@ -130,7 +130,7 @@ const readmeContent = readmeData => {
   if(!tableOfContents){
     tableOfContentsRM = ''
   } else{
-    tableOfContentsRM = `### Table of Contents:
+    tableOfContentsRM = `## Table of Contents:
 * [Installation](#Installation) 
 * [Usage](#usage) 
 * [Contact](#contact)

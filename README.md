@@ -1,18 +1,18 @@
 
-# test
-[![license](https://img.shields.io/badge/license-GNU Library-brightgreen.svg)](https://en.wikipedia.org/wiki/GNU Library_License)
+# Test
+[![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://en.wikipedia.org/wiki/MIT_License)
 ## Description
-test
-### Table of Contents:
+Test
+## Table of Contents:
 * [Installation](#Installation) 
 * [Usage](#usage) 
 * [Contact](#contact)
     
 ## Installation
-test
+Test
 ## Usage
-test
+Test
 
 
 ## Contact
-test
+Test
