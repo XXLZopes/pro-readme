@@ -11,6 +11,26 @@ const questions = () => {
       name: "github",
       message: "What is your github username?",
     },
+        //deployed application y or n
+        {
+          type: "confirm",
+          name: "confirmDeployed",
+          message: "Is this application deployed?",
+          default: true,
+        },
+        //deployd application after y
+        {
+          type: "input",
+          name: "linkToApp",
+          message: "Copy and paste a link to the deployed project application",
+          when: ({ confirmDeployed }) => {
+            if (confirmDeployed) {
+              return true;
+            } else {
+              return false;
+            }
+          },
+        },
     //title
     {
       type: "input",
@@ -120,6 +140,7 @@ const readmeContent = readmeData => {
   //destructure projects and about data from templateData based on their property key names
   const {
     github,
+    linkToApp,
     projectName,
     description,
     tableOfContents,
@@ -130,6 +151,15 @@ const readmeContent = readmeData => {
     license,
     questions,
   } = readmeData;
+
+//deployed application
+let linkToAppRM;
+if(!linkToApp){
+  linkToAppRM = ''
+} else{
+  linkToAppRM = `[Deployed Application](${linkToApp})`
+};
+
   //table of contents
   let tableOfContentsRM;
   if(!tableOfContents){
@@ -155,7 +185,7 @@ const readmeContent = readmeData => {
   if(license === 'None'){
     licenseRM = ''
   } else{
-    licenseRM = `[![license](https://img.shields.io/badge/license-${license}-brightgreen.svg)](https://en.wikipedia.org/wiki/${license}_License)`
+    licenseRM = `[![license](https://img.shields.io/badge/license-${license}-red.svg)](https://en.wikipedia.org/wiki/${license}_License)`
   }
   
   //tests
@@ -179,6 +209,8 @@ ${testsRM}
 ${screenshotRM}
 ## Contact
 [Github](https://github.com/${github})
+${linkToAppRM}
+[Project's Github](https://github.com/${github}/${projectName})
 ${questions}
 `;
 };
