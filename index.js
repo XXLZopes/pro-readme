@@ -1,8 +1,4 @@
-//Questions (includes username and github)
-
-
-
-
+const fs = require('fs')
 const inquirer = require('inquirer');
 const Choices = require('inquirer/lib/objects/choices');
 // array of questions for user
@@ -115,7 +111,10 @@ const questions = () => {
 };
 
 // function to write README file
-function writeToFile(fileName, data) {
+// function writeToFile(fileName, data) {
+// }
+const writeFile = (fileContent) => {
+  
 }
 
 // function to initialize program
@@ -128,5 +127,5 @@ init();
 
 questions()
 .then(testConsoleLog => {
-  console.log(testConsoleLog)
+  console.log(testConsoleLog.projectName)
 });
