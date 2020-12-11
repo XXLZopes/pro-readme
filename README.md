@@ -12,6 +12,6 @@ You can download this project from github.  It is ran in a web browser
 ## Usage
 This website is used to build the user base of the theoretical compant Run Buddy
 
-![](test.png)
+![](./test.png)
 ## Contact
 Contact me vie email at: afordm99@gmail.com

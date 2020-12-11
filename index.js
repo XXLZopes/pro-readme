@@ -91,14 +91,12 @@ const questions = () => {
       choices: [
         "None",
         "Apache",
-        "BSD 3-Clause",
-        "BDS 2-Clause",
-        "GNU General",
-        "GNU Library",
+        "BSD3-Clause",
+        "BDS2-Clause",
+        "GNUGeneral",
+        "GNULibrary",
         "MIT",
-        "Mozilla",
-        "Common Development and Distribution",
-        "Eclipse Public License",
+        "Mozilla"
       ],
     },
     //Questions
