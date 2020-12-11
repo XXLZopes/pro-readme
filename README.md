@@ -1,21 +1,20 @@
 
-# TEST PROJECT NAME
-## Description [![license](https://img.shields.io/badge/license-MIT-red.svg)](https://en.wikipedia.org/wiki/MIT_License)
-Testing
+# Test Project [![license](https://img.shields.io/badge/license-BDS2-Clause-red.svg)](https://en.wikipedia.org/wiki/BDS2-Clause_License)
+## Description
+aksjdfnjkvefw
+Description
 ## Table of Contents:
 * [Installation](#Installation) 
 * [Usage](#usage) 
 * [Contact](#contact)
     
 ## Installation
-test install
+install
 ## Usage
-testing
-## Project Testing
-    Test the app by downloading node and running node index
+used
+
 ![](./test.png)
 ## Contact
-[Deployed Application](jknfsdbehrwfnklds)
 [Github](https://github.com/XXLZopes)
 
-Reach out to me vi email: afordm99@gmail.com
+My email is: afordm99@gmail.com

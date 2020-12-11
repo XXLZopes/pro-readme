@@ -155,7 +155,9 @@ let linkToAppRM;
 if(!linkToApp){
   linkToAppRM = ''
 } else{
-  linkToAppRM = linkToApp
+  
+  linkToAppRM = `
+  [Deployed Application](${linkToApp})`
 };
 
   //table of contents
@@ -195,8 +197,9 @@ if(!linkToApp){
     ${tests}`
   };
   return `
-# ${projectName}
-## Description ${licenseRM}
+# ${projectName} ${licenseRM}
+## Description
+${linkToApp}
 ${description}
 ${tableOfContentsRM}
 ## Installation
@@ -206,7 +209,6 @@ ${usage}
 ${testsRM}
 ${screenshotRM}
 ## Contact
-[Deployed Application](${linkToAppRM})
 [Github](https://github.com/${github})
 
 ${questions}
