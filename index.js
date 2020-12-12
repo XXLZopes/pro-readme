@@ -199,7 +199,7 @@ if(!linkToApp){
   if(!contributions){
     contributionsRM = ''
   } else{
-    contributionsRM = `## Contributions
+    contributionsRM = `## Make Contributions
     ${contributions}`
   };
   //license
