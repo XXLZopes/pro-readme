@@ -198,8 +198,7 @@ if(!linkToApp){
   };
   return `
 # ${projectName}
-${linkToApp}
-## Description ${licenseRM}
+## Description ${linkToAppRM} ${licenseRM}
 ${description}
 ${tableOfContentsRM}
 ## Installation
