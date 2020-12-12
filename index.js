@@ -81,18 +81,31 @@ const questions = () => {
         }
       },
     },
-    //how to make contributions
+    //contributions y or n
     {
-      type: "input",
-      name: "contributions",
-      message: "How can others make contributions?",
+      type: "confirm",
+      name: "confirmContributions",
+      message: "Would you like to include contribution instructions?",
+      default: false
+    },
+    {
+      type: 'input',
+      name: 'contributions',
+      message: 'Describe how someone can make contributions',
+      when: ({confirmContributions}) => {
+        if (confirmContributions){
+          return true;
+        } else{
+          return false;
+        }
+      }
     },
     //tests y or n
     {
       type: "confirm",
       name: "testConfirm",
       message: "Would you like to include instructions on how to test the app?",
-      default: false,
+      default: false
     },
     //tests after y
     {
@@ -105,7 +118,7 @@ const questions = () => {
         } else {
           return false;
         }
-      },
+      }
     },
     //License
     {
@@ -145,6 +158,7 @@ const readmeContent = readmeData => {
     installation,
     usage,
     screenshot,
+    contributions,
     tests,
     license,
     questions,
@@ -180,6 +194,14 @@ if(!linkToApp){
     screenshotRM = `![](${screenshot})`
   };
 
+  //contributions
+  let contributionsRM;
+  if(!contributions){
+    contributionsRM = ''
+  } else{
+    contributionsRM = `## Contributions
+    ${contributions}`
+  };
   //license
   let licenseRM;
   if(license === 'None'){
@@ -208,6 +230,7 @@ ${installation}
 ${usage}
 ${testsRM}
 ${screenshotRM}
+${contributionsRM}
 ## Contact
 [Github](https://github.com/${github})
 
